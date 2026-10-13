@@ -1,0 +1,19 @@
+# Keil build files
+**/Objects/
+**/Listings/
+*.uvoptx
+*.uvguix.*
+*.uvgui.*
+
+# Proteus temporary files
+*.pdsprj.*
+*.pdsbak
+
+# Personal notes and temporary PDF
+*.one
+Proteus DSO Printing.pdf
+# Temporarily exclude old Proteus projects
+/2 Proteus/
+
+# Proteus automatic backups
+**/Project Backups/
