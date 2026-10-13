@@ -15,21 +15,25 @@ int main(void)
 	OLED_ShowString(2,1,"ARR:");
 	OLED_ShowString(3,1	,"CCR:");
 	
+
+	
 	while (1)
 	{
 		OLED_ShowNum(1,5,TIM2->PSC,6);
 		OLED_ShowNum(2,5,TIM2->ARR,6);
-		OLED_ShowNum(3,5,TIM2->CCR1,6);
 		
+			
 		for (i = 0; i <= 100; i++)//把CCR的数值从0递增100，pwm占空比从0到100
 		{
 			PWM_SetCompare1(i);
 			Delay_ms(10);
+			OLED_ShowNum(3,5,TIM2->CCR1,6);//CCR=50
 		}
 		for (i = 0; i <= 100; i++)//把CCR的数值从100递减到0，PWM占空比从100到0
 		{
-			PWM_SetCompare1(100 - i);
+			PWM_SetCompare1(101 - i);
 			Delay_ms(10);
+			OLED_ShowNum(3,5,TIM2->CCR1,6);//CCR=50
 		}
 	}
 }
